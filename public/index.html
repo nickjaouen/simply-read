@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Chapter Text-to-Speech</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <h1>Book Chapter Text-to-Speech</h1>
+        <p class="subtitle">
+          Select a chapter, voice, and model to generate audio you can play in the browser.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="field">
+          <label for="chapterSelect">Chapter</label>
+          <select id="chapterSelect">
+            <option value="">Loading chapters...</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="voiceSelect">Voice</label>
+          <select id="voiceSelect">
+            <option value="alloy">Alloy</option>
+            <option value="ash">Ash</option>
+            <option value="coral">Coral</option>
+            <option value="echo">Echo</option>
+            <option value="fable">Fable</option>
+            <option value="onyx">Onyx</option>
+            <option value="nova">Nova</option>
+            <option value="sage">Sage</option>
+            <option value="shimmer">Shimmer</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="modelSelect">Model</label>
+          <select id="modelSelect">
+            <option value="tts-1" selected>tts-1 (standard)</option>
+            <option value="tts-1-hd">tts-1-hd (high quality)</option>
+          </select>
+        </div>
+
+        <div class="button-row">
+          <button id="generateBtn" class="primary">Generate Audio</button>
+          <button id="testBtn" class="secondary">Generate Test</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <h2>Generated Audio</h2>
+          <p class="muted">Select an audio to view its controls. Only one is shown at a time.</p>
+        </div>
+        <div class="field">
+          <label for="audioSelect">Saved Audio</label>
+          <select id="audioSelect">
+            <option value="">Loading saved audio...</option>
+          </select>
+        </div>
+        <div id="audioDetail" class="audio-detail" aria-live="polite">
+          Choose an audio file to view controls.
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <h2>Chapter Text</h2>
+          <p class="muted">Scrollable preview of the selected chapter.</p>
+        </div>
+        <div id="chapterText" class="chapter-text" aria-live="polite">
+          Select a chapter to load its text.
+        </div>
+      </section>
+    </main>
+
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>
