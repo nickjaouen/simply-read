@@ -161,7 +161,7 @@ app.get("/api/audios", (_req, res) => {
 });
 
 app.post("/api/generate", async (req, res) => {
-  const { chapterName, voice, model = "tts-1", speed = 1 } = req.body || {};
+  const { chapterName, voice, model = "gpt-4o-mini-tts", speed = 1 } = req.body || {};
   if (!chapterName || !voice) {
     return res
       .status(400)
@@ -208,7 +208,7 @@ app.post("/api/generate", async (req, res) => {
 app.post("/api/generate-test", async (req, res) => {
   const {
     voice,
-    model = "tts-1",
+    model = "gpt-4o-mini-tts",
     speed = 1,
     message = "This is a test for Nick",
   } = req.body || {};

@@ -62,7 +62,7 @@ async function loadChapters() {
 async function onGenerate() {
   const chapterName = chapterSelect.value;
   const voice = voiceSelect.value;
-  const model = modelSelect.value || "tts-1";
+  const model = modelSelect.value || "gpt-4o-mini-tts";
 
   if (!chapterName) {
     setStatus("Please select a chapter.");
@@ -102,7 +102,7 @@ async function onGenerate() {
 
 async function onTestGenerate() {
   const voice = voiceSelect.value;
-  const model = modelSelect.value || "tts-1";
+  const model = modelSelect.value || "gpt-4o-mini-tts";
 
   generateBtn.disabled = true;
   testBtn.disabled = true;
